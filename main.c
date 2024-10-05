@@ -18,7 +18,7 @@ int found = 0;
 
 int initialisition()
 {
-    referencecount[0] = 1; // Référence 1
+    referencecount[0] = 1;
     strcpy(nom[0], "AZIZ");
     strcpy(prenom[0], "BENMELOUK");
     strcpy(phone[0], "0601020304");
@@ -26,7 +26,7 @@ int initialisition()
     strcpy(status[0], "valide");
     strcpy(date[0], "2024-10-01");
 
-    referencecount[1] = 2; // Référence 2
+    referencecount[1] = 2;
     strcpy(nom[1], "HAMZA");
     strcpy(prenom[1], "LEM");
     strcpy(phone[1], "0601020304");
@@ -34,7 +34,7 @@ int initialisition()
     strcpy(status[1], "reporte");
     strcpy(date[1], "2024-10-09");
 
-    referencecount[2] = 3; // Référence 3
+    referencecount[2] = 3;
     strcpy(nom[2], "KAWTER");
     strcpy(prenom[2], "REG");
     strcpy(phone[2], "0601020304");
@@ -42,7 +42,7 @@ int initialisition()
     strcpy(status[2], "annule");
     strcpy(date[2], "2024-09-04");
 
-    referencecount[3] = 4; // Référence 4
+    referencecount[3] = 4;
     strcpy(nom[3], "AYMEN");
     strcpy(prenom[3], "AYMEN");
     strcpy(phone[3], "0601020304");
@@ -50,7 +50,7 @@ int initialisition()
     strcpy(status[3], "traite");
     strcpy(date[3], "2024-09-28");
 
-    referencecount[4] = 5; // Référence 5
+    referencecount[4] = 5;
     strcpy(nom[4], "MALAK");
     strcpy(prenom[4], "MALAK");
     strcpy(phone[4], "0605060708");
@@ -58,7 +58,7 @@ int initialisition()
     strcpy(status[4], "valide");
     strcpy(date[4], "2024-10-06");
 
-    referencecount[5] = 6; // Référence 6
+    referencecount[5] = 6;
     strcpy(nom[5], "RAJAA");
     strcpy(prenom[5], "BEL");
     strcpy(phone[5], "0601020304");
@@ -66,7 +66,7 @@ int initialisition()
     strcpy(status[5], "reporte");
     strcpy(date[5], "2024-08-03");
 
-    referencecount[6] = 7; // Référence 7
+    referencecount[6] = 7;
     strcpy(nom[6], "ILYASS");
     strcpy(prenom[6], "MO");
     strcpy(phone[6], "0601020304");
@@ -74,7 +74,7 @@ int initialisition()
     strcpy(status[6], "annule");
     strcpy(date[6], "2024-06-20");
 
-    referencecount[7] = 8; // Référence 8
+    referencecount[7] = 8;
     strcpy(nom[7], "ANWAR");
     strcpy(prenom[7], "ANU");
     strcpy(phone[7], "0601020304");
@@ -82,7 +82,7 @@ int initialisition()
     strcpy(status[7], "traite");
     strcpy(date[7], "2024-07-01");
 
-    referencecount[8] = 9; // Référence 9
+    referencecount[8] = 9;
     strcpy(nom[8], "RAHIL");
     strcpy(prenom[8], "LEM");
     strcpy(phone[8], "0601020304");
@@ -90,7 +90,7 @@ int initialisition()
     strcpy(status[8], "valide");
     strcpy(date[8], "2024-10-14");
 
-    referencecount[9] = 10; // Référence 10
+    referencecount[9] = 10;
     strcpy(nom[9], "YOU");
     strcpy(prenom[9], "CODE");
     strcpy(phone[9], "0601020304");
@@ -103,16 +103,16 @@ int initialisition()
 }
 void Ajouter() {
     int n;
-    printf("Combien de reservations vous voulez ajouter : ");
+    printf("\nCombien de reservations vous voulez ajouter : ");
     scanf("%d", &n);
 
     if (reservationCount + n > MAX) {
-        printf("Le maximum de reservations a ete atteint.\n");
+        printf("\nLe maximum de reservations a ete atteint.\n");
         return;
     }
 
     for (int i = 0; i < n; i++) {
-        printf("Ajouter le Nom: ");
+        printf("\nAjouter le Nom: ");
         scanf("%s", nom[reservationCount]);
         printf("Ajouter le Prenom: ");
         scanf("%s", prenom[reservationCount]);
@@ -127,22 +127,22 @@ void Ajouter() {
 
         referencecount[reservationCount] = reservationCount + 1;
         reservationCount++;
-        printf("Reservation ajoutee avec succes\n");
+        printf("\n*Reservation ajoutee avec succes*\n");
     }
 }
 
 void Modifier() {
     int ref;
-    printf("Entrez la reference de la reservation que vous voulez modifier : ");
+    printf("\nEntrez la reference de la reservation que vous voulez modifier : ");
     scanf("%d",&ref);
     ref--;
 
     if (ref < 0 || ref >= reservationCount) {
-        printf("Reference non disponible.\n");
+        printf("\nReference non disponible.\n");
         return;
     }
 
-    printf("Veuillez choisir ce que vous voulez modifier :\n");
+    printf("\nVeuillez choisir ce que vous voulez modifier :\n");
     printf("1. Nom\n");
     printf("2. Prenom\n");
     printf("3. Telephone\n");
@@ -275,7 +275,7 @@ void Recherch()
     }
 
     if (!found) {
-        printf("Aucune reservation trouvee pour le nom : %s\n", rechnom );
+        printf("\nAucune reservation trouvee pour le nom : %s\n", rechnom );
 }
 break;
 
@@ -312,7 +312,7 @@ void Statistiques() {
      int statuts[4] = {0};
      int choix4 ;
 
-    printf("1. Calculer la moyenne d'age des patients ayant reserve.\n");
+    printf("1. \nCalculer la moyenne d'age des patients ayant reserve.\n");
     printf("2. Afficher le nombre de patients par tranche d'age.\n");
     printf("3. Generer des statistiques pour connaitre le nombre total de reservations par statut.\n");
     printf("Entrer votre choix :");
@@ -321,7 +321,7 @@ void Statistiques() {
 case 1:
 
     if (reservationCount == 0) {
-        printf("Aucune reservation disponible pour generer des statistiques.\n");
+        printf("\nAucune reservation disponible pour generer des statistiques.\n");
         return;
     }
   for (int i = 0; i < reservationCount; i++) {
@@ -335,7 +335,7 @@ case 2:
 
 for (int i = 0; i < reservationCount; i++) {
 
-      // Comptage des tranches d'age
+
         if (age[i] <= 18) {
             tranches[0]++;
         } else if (age[i] <= 35) {
